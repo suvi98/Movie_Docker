@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Information</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+    <link rel="text/javascript" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js">
+    <script type="text/javascript" src="/JS/index.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+    
+</head>
+<body>
+    <div id="main-info" onload="home()">
+
+            <div id="top">
+                <div class="row" style="background-image: url(/imgs/filmflix.jpg);">
+                
+            <img src="https://tse1.mm.bing.net/th/id/OIP.ny9akwRPfXKcXZrk0RxuWgHaH6?pid=ImgDet&rs=1" style="width: 21%;height: 100px;" >
+            <img src="https://i.ytimg.com/vi/y9gzkrgR0wI/maxresdefault.jpg" style="width: 30%;height: 100px;" >
+            <img src="https://tse1.mm.bing.net/th/id/OIP.AK6U_jX96M3WhF4sVwmVrgHaEK?pid=ImgDet&rs=1" style="width: 30%;height: 100px;">
+        </div>
+            </div>
+            <div id="menu">
+                <div class="nav_menu">
+
+                    
+                    <a href="index.html">Home</a>
+                    <a href="CommingSoon.html">Coming Soon</a>
+                    <a href="TopRatedIndians.html">Top Rated Indian</a>
+                    <a href="TopRatedMovie.html">Top Rated Movies</a>
+                    <a href="MovieinTheater.html">Movies in theaters </a>
+                    <a href="Login.html">Login</a>
+        </div>
+            <div class="row" style="background: transparent;opacity:inherit;" >
+                <div class="container">
+                    <div class="mySlides">
+                    <div class="numbertext">1 / 6</div>
+                    <img src="/imgs/deathpool.jpg" style="width:100%;height: 350px;">
+                    </div>
+                
+                    <div class="mySlides">
+                    <div class="numbertext">2 / 6</div>
+                    <img src="/imgs/Avtar.jpg" style="width:100%;height: 350px;">
+                    </div>
+                
+                    <div class="mySlides">
+                    <div class="numbertext">3 / 6</div>
+                    <img src="/imgs/twilight.jpg" style="width:100%;height: 350px;">
+                    </div>
+                    
+                    <div class="mySlides">
+                    <div class="numbertext">4 / 6</div>
+                    <img src="/imgs/Lucifer Wallpaper.jpg" style="width:100%;height: 350px;">
+                    </div>
+                
+                    <div class="mySlides">
+                    <div class="numbertext">5 / 6</div>
+                    <img src="/imgs/sebrina.jpg" style="width:100%;height: 350px;">
+                    </div>
+                    
+                    <div class="mySlides">
+                    <div class="numbertext">6 / 6</div>
+                    <img src="/imgs/narnia.jpg" style="width:100%;height: 350px;">
+                    </div>
+                    
+                    <a class="prev" onclick="plusSlides(-1)">❮</a>
+                    <a class="next" onclick="plusSlides(1)">❯</a>
+                
+                    <div class="caption-container">
+                    <p id="caption"></p>
+                    </div>
+                
+                    <div class="row">
+                    <div class="column">
+                        <img class="demo cursor" src="/imgs/deathpool.jpg" style="width:100%" onclick="currentSlide(1)" alt="Avengers" >
+                    </div>
+                    <div class="column">
+                        <img class="demo cursor" src="/imgs/Avtar.jpg" style="width:100%" onclick="currentSlide(2)" alt="Avtar">
+                    </div>
+                    <div class="column">
+                        <img class="demo cursor" src="/imgs/twilight.jpg" style="width:100%" onclick="currentSlide(3)" alt="The Twilight" >
+                    </div>
+                    <div class="column">
+                        <img class="demo cursor" src="/imgs/Lucifer Wallpaper.jpg" style="width:100%" onclick="currentSlide(4)" alt="Vegan">
+                    </div>
+                    <div class="column">
+                        <img class="demo cursor" src="/imgs/sebrina.jpg" style="width:100%" onclick="currentSlide(5)" alt="Avatar 2">
+                    </div>    
+                    <div class="column">
+                        <img class="demo cursor" src="/imgs/narnia.jpg" style="width:100%" onclick="currentSlide(6)" alt="Narnia">
+                    </div>
+                    </div>
+                </div>
+
+            </div>
+        
+            </div>
+    </div>
+            <script>
+              carousel();
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}                 
+            </script>
+</body>
+</html>
